@@ -1,0 +1,87 @@
+{
+  "actorSpecification": 1,
+  "fields": [
+    {
+      "name": "linkedinUrl",
+      "title": "LinkedIn URL",
+      "type": "string",
+      "description": "The LinkedIn profile URL that was checked."
+    },
+    {
+      "name": "profileId",
+      "title": "Profile ID",
+      "type": "string",
+      "description": "The LinkedIn profile slug extracted from the URL."
+    },
+    {
+      "name": "isOpenProfile",
+      "title": "Is Open Profile",
+      "type": "boolean",
+      "description": "True if the member has Open Profile (free InMail) enabled."
+    },
+    {
+      "name": "canSendFreeInMail",
+      "title": "Can Send Free InMail",
+      "type": "boolean",
+      "description": "Whether you can send this person a free InMail message."
+    },
+    {
+      "name": "fullName",
+      "title": "Full Name",
+      "type": "string",
+      "description": "The member's full name as shown on their profile."
+    },
+    {
+      "name": "headline",
+      "title": "Headline",
+      "type": "string",
+      "description": "The member's LinkedIn headline."
+    },
+    {
+      "name": "statusCode",
+      "title": "Status Code",
+      "type": "integer",
+      "description": "HTTP status code returned when fetching the profile."
+    },
+    {
+      "name": "error",
+      "title": "Error",
+      "type": "string",
+      "description": "Error message if the check failed, otherwise null."
+    },
+    {
+      "name": "checkedAt",
+      "title": "Checked At",
+      "type": "string",
+      "description": "ISO timestamp of when the check was performed."
+    }
+  ],
+  "views": {
+    "overview": {
+      "title": "Results Overview",
+      "transformation": {
+        "fields": [
+          "linkedinUrl",
+          "fullName",
+          "isOpenProfile",
+          "canSendFreeInMail",
+          "headline",
+          "checkedAt",
+          "error"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "linkedinUrl": { "label": "LinkedIn URL", "format": "link" },
+          "fullName": { "label": "Name" },
+          "isOpenProfile": { "label": "Open Profile", "format": "boolean" },
+          "canSendFreeInMail": { "label": "Free InMail", "format": "boolean" },
+          "headline": { "label": "Headline" },
+          "checkedAt": { "label": "Checked At" },
+          "error": { "label": "Error" }
+        }
+      }
+    }
+  }
+}
