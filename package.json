@@ -1,0 +1,20 @@
+{
+  "name": "linkedin-open-profile-status",
+  "version": "0.0.1",
+  "description": "Checks if a LinkedIn member has Open Profile (free InMail) enabled. No cookies required.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "echo \"No tests defined\" && exit 0"
+  },
+  "dependencies": {
+    "apify": "^3.2.2",
+    "crawlee": "^3.5.0",
+    "got-scraping": "^4.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Boomerang <hello@theboomerang.co>",
+  "license": "ISC"
+}
