@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "linkedin-open-profile-status",
+  "title": "LinkedIn Open Profile Status (No cookies)",
+  "description": "Checks if a LinkedIn member has Open Profile (free InMail) enabled. No cookies required. Verify messaging availability at scale.",
+  "version": "0.0",
+  "buildTag": "latest",
+  "environmentVariables": {},
+  "dockerfile": "./Dockerfile",
+  "input": "./INPUT_SCHEMA.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}
