@@ -9,14 +9,14 @@
       "type": "string",
       "description": "The LinkedIn profile URL to check (e.g. https://www.linkedin.com/in/ajjames)",
       "editor": "textfield",
-      "example": "https://www.linkedin.com/in/ajjames"
+      "prefill": "https://www.linkedin.com/in/ajjames"
     },
     "fileName": {
       "title": "File Name (Tag)",
       "type": "string",
       "description": "A label for this run. Used to identify the output file.",
       "editor": "textfield",
-      "example": "my-leads-batch-1"
+      "prefill": "my-leads-batch-1"
     }
   },
   "required": ["linkedinUrl", "fileName"]
