@@ -9,32 +9,15 @@
       "type": "string",
       "description": "The LinkedIn profile URL to check (e.g. https://www.linkedin.com/in/ajjames)",
       "editor": "textfield",
-      "example": "https://www.linkedin.com/in/ajjames",
-      "pattern": "^https://(www\\.)?linkedin\\.com/in/[a-zA-Z0-9\\-_%]+/?$"
+      "example": "https://www.linkedin.com/in/ajjames"
     },
-    "linkedinUrls": {
-      "title": "LinkedIn URLs (bulk)",
-      "type": "array",
-      "description": "List of LinkedIn profile URLs to check in bulk.",
-      "editor": "json",
-      "items": {
-        "type": "string"
-      },
-      "example": [
-        "https://www.linkedin.com/in/ajjames",
-        "https://www.linkedin.com/in/satyanadella"
-      ]
-    },
-    "proxyConfiguration": {
-      "title": "Proxy configuration",
-      "type": "object",
-      "description": "Proxy settings to avoid rate limiting.",
-      "editor": "proxy",
-      "prefill": {
-        "useApifyProxy": true,
-        "apifyProxyGroups": ["RESIDENTIAL"]
-      }
+    "fileName": {
+      "title": "File Name (Tag)",
+      "type": "string",
+      "description": "A label for this run. Used to identify the output file.",
+      "editor": "textfield",
+      "example": "my-leads-batch-1"
     }
   },
-  "required": []
+  "required": ["linkedinUrl", "fileName"]
 }
