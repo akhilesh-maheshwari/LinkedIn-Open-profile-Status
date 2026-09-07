@@ -1,0 +1,40 @@
+{
+  "title": "LinkedIn Open Profile Status (No cookies)",
+  "description": "Check if a LinkedIn member has Open Profile (free InMail) enabled. No cookies or login required.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "linkedinUrl": {
+      "title": "LinkedIn URL",
+      "type": "string",
+      "description": "The LinkedIn profile URL to check (e.g. https://www.linkedin.com/in/ajjames)",
+      "editor": "textfield",
+      "example": "https://www.linkedin.com/in/ajjames",
+      "pattern": "^https://(www\\.)?linkedin\\.com/in/[a-zA-Z0-9\\-_%]+/?$"
+    },
+    "linkedinUrls": {
+      "title": "LinkedIn URLs (bulk)",
+      "type": "array",
+      "description": "List of LinkedIn profile URLs to check in bulk.",
+      "editor": "json",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "https://www.linkedin.com/in/ajjames",
+        "https://www.linkedin.com/in/satyanadella"
+      ]
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "Proxy settings to avoid rate limiting.",
+      "editor": "proxy",
+      "prefill": {
+        "useApifyProxy": true,
+        "apifyProxyGroups": ["RESIDENTIAL"]
+      }
+    }
+  },
+  "required": []
+}
