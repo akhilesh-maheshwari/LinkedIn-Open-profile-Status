@@ -1,0 +1,8 @@
+node_modules/
+storage/
+.env
+*.log
+apify_storage/
+.idea/
+.vscode/
+.DS_Store
