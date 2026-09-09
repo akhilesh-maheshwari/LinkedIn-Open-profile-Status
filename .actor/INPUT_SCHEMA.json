@@ -4,20 +4,24 @@
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "linkedinUrl": {
-      "title": "LinkedIn URL",
-      "type": "string",
-      "description": "The LinkedIn profile URL to check (e.g. https://www.linkedin.com/in/ajjames)",
-      "editor": "textfield",
-      "prefill": "https://www.linkedin.com/in/ajjames"
-    },
     "fileName": {
-      "title": "File Name (Tag)",
+      "title": "File Name",
       "type": "string",
       "description": "A label for this run. Used to identify the output file.",
       "editor": "textfield",
       "prefill": "my-leads-batch-1"
+    },
+    "linkedinUrls": {
+      "title": "LinkedIn Profile URLs",
+      "type": "array",
+      "description": "List of LinkedIn profile URLs to check for Open Profile status.",
+      "editor": "stringList",
+      "prefill": ["https://www.linkedin.com/in/ajjames"],
+      "items": {
+        "type": "string",
+        "pattern": "^https?://(www\\.)?linkedin\\.com/in/[a-zA-Z0-9\\-_%]+/?$"
+      }
     }
   },
-  "required": ["linkedinUrl", "fileName"]
+  "required": ["linkedinUrls"]
 }
