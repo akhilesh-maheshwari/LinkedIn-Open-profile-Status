@@ -8,14 +8,9 @@ try {
   // 1. GET INPUT
   // ──────────────────────────────
   const input            = await Actor.getInput();
-  const serviceTagName   = input.fileName        || '';
-  const linkedinUrl      = input.linkedinUrl      || '';
-  const linkedinUrlsRaw  = input.linkedinUrls     || [];
-
-  // Build flat URL list from single + bulk inputs
-  const rawUrls = [];
-  if (linkedinUrl) rawUrls.push(linkedinUrl);
-  if (Array.isArray(linkedinUrlsRaw)) rawUrls.push(...linkedinUrlsRaw);
+  const serviceTagName   = input.fileName    || '';
+  const linkedinUrl      = '';
+  const rawUrls          = Array.isArray(input.linkedinUrls) ? input.linkedinUrls : [];
 
   const serviceName       = 'LinkedIn Open Profile Status';
   const serviceOption1    = 'linkedin-open-profile';
@@ -205,7 +200,8 @@ try {
           service_option_1 : serviceOption1,
           service_name     : serviceName,
           request_source   : requestSource,
-          linkedinUrl
+          linkedinUrl,
+          linkedinUrls     : validUrls       // ← actual URL array
         })
       }
     );
@@ -268,7 +264,8 @@ try {
             service_option_1 : serviceOption1,
             service_name     : serviceName,
             request_source   : requestSource,
-            linkedinUrl
+            linkedinUrl,
+            linkedinUrls     : validUrls       // ← actual URL array
           })
         }
       );
