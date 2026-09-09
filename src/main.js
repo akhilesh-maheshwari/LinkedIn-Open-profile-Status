@@ -20,8 +20,8 @@ try {
   const serviceName       = 'LinkedIn Open Profile Status';
   const serviceOption1    = 'linkedin-open-profile';
   const requestSource     = 'LinkedIn_Open_Profile_AP';
-  const boomerangInputUrl = 'https://linkedinsocial-n8n.boomerangserver.co.in/webhook/open-profile-scraper';
-  const boomerangStatUrl  = 'https://linkedinsocial-n8n.boomerangserver.co.in/webhook/request-status';
+  const boomerangInputUrl = 'https://linkedinprivate-n8n.boomerangserver.co.in/webhook/open-profile-check-request';
+  const boomerangStatUrl  = 'https://linkedinprivate-n8n.boomerangserver.co.in/webhook/open-profile-check-stats';
 
   console.log('Tag Name  :', serviceTagName);
   console.log('Service   :', serviceName);
@@ -380,7 +380,7 @@ try {
                 request_id,
                 requestStatus     : 'Error',
                 driveInputLink,
-                boomerangOutputUrl: `https://linkedinsocial-n8n.boomerangserver.co.in/webhook/request-status?request_id=${request_id}`,
+                boomerangOutputUrl: `https://linkedinprivate-n8n.boomerangserver.co.in/webhook/open-profile-output?request_id=${request_id}`,
                 batch_number,
                 request_unique_id,
                 batchFolderId,
@@ -419,7 +419,7 @@ try {
         continue;
       }
 
-      const boomerangOutputUrl = `https://linkedinsocial-n8n.boomerangserver.co.in/webhook/request-status?request_id=${request_id}`;
+      const boomerangOutputUrl = `https://linkedinprivate-n8n.boomerangserver.co.in/webhook/open-profile-output?request_id=${request_id}`;
 
       let outputLink = '';
       try {
