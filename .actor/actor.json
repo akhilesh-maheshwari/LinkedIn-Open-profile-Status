@@ -8,7 +8,65 @@
   "environmentVariables": {},
   "dockerfile": "./Dockerfile",
   "input": "./INPUT_SCHEMA.json",
+  "output": {
+    "actorOutputSchemaVersion": 1,
+    "title": "LinkedIn Open Profile Status Output",
+    "description": "LinkedIn profile data including Open Profile status, follower count, premium status, and more.",
+    "properties": {
+      "results": {
+        "type": "string",
+        "title": "LinkedIn Profiles",
+        "template": "{{links.apiDefaultDatasetUrl}}/items"
+      }
+    }
+  },
   "storages": {
-    "dataset": "./dataset_schema.json"
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": [
+              "publicIdentifier",
+              "linkedInIdentifier",
+              "memberIdentifier",
+              "linkedInUrl",
+              "firstName",
+              "lastName",
+              "headline",
+              "summary",
+              "email",
+              "location",
+              "followerCount",
+              "premium",
+              "is_open_profile",
+              "is_creator",
+              "is_influencer",
+              "is_self",
+              "is_relationship",
+              "is_hiring",
+              "is_open_to_work",
+              "websites",
+              "connections_count",
+              "birthdate",
+              "positions",
+              "schools",
+              "skills",
+              "languages",
+              "recommendations",
+              "volunteering_experience",
+              "photoUrl",
+              "backgroundUrl",
+              "request_type",
+              "open_profile_status"
+            ]
+          },
+          "display": {
+            "component": "table"
+          }
+        }
+      }
+    }
   }
 }
